@@ -8,6 +8,10 @@ const connect = () => {
 
   conn.setEncoding('utf8');
 
+  conn.on('connect', () => {
+    console.log("Successfully connected to the game serevr");
+  });
+
   conn.on('data', (data) => {
     console.log(data);
   });
