@@ -10,6 +10,7 @@ const connect = () => {
 
   conn.on('connect', () => {
     console.log("Successfully connected to the game serevr");
+    conn.write("Name: FAB");
   });
 
   conn.on('data', (data) => {
