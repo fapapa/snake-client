@@ -12,6 +12,10 @@ const handleUserInput = (input) => {
     connection.write("Move: down");
   } else if (input === "n") {
     connection.write("Move: right");
+  } else if (input === "m") {
+    connection.write("Say: Nahaa!");
+  } else if (input === "v") {
+    connection.write("Say: VROOOOM!");
   }
 };
 
