@@ -11,6 +11,9 @@ const connect = () => {
   conn.on('connect', () => {
     console.log("Successfully connected to the game serevr");
     conn.write("Name: FAB");
+    setInterval(() => {
+      // conn.write("Move: up");
+    }, 50);
   });
 
   conn.on('data', (data) => {
