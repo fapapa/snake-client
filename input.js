@@ -1,19 +1,22 @@
+let connection;
+
 const handleUserInput = (input) => {
   if (input === "\u0003") {
     console.log("Exiting...");
     process.exit();
   } else if (input === "c") {
-    console.log("up");
+    connection.write("Move: up");
   } else if (input === "h") {
-    console.log("left");
+    connection.write("Move: left");
   } else if (input === "t") {
-    console.log("down");
+    connection.write("Move: down");
   } else if (input === "n") {
-    console.log("right");
+    connection.write("Move: right");
   }
 };
 
-const setupInput = () => {
+const setupInput = (conn) => {
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding('utf8');
